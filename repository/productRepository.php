@@ -1,5 +1,6 @@
 <?php
-    include 'C:\xampp\htdocs\PROJEKTI\database\dbConnection.php';
+    include '../models/product.php';
+    include '../database/dbConnection.php';
 
     class ProductRepository{
         private $connection;
@@ -10,15 +11,28 @@
             $this->connection = $conn->startConnection();
         }
     
-        function insertProduct(){
+        function insertProduct($product){
             $conn = $this->connection;
+
+            $name = $product->getName();
+            $image1 = $product->getImage1();
+            $image2 = $product->getImage2();
+            $image3 = $product->getImage3();
+            $image4 = $product->getImage4();
+            $image5 = $product->getImage5();
+            $image6 = $product->getImage6();
+            $brand = $product->getBrand();
+            $old_price = $product->getOldPrice();
+            $current_price = $product->getCurrentPrice();
+
+
             $sql = "INSERT INTO produktet VALUES(?,?,?,?,?,?,?,?,?,?)";
             $statement = $conn->prepare($sql);
-            $statement->execute(['monitor','image1','image2','image3','image4','image5','image6','brand',1,2]);
-            echo "Success!";
+            $statement->execute([$name,$image1,$image2,$image3,$image4,$image5,$image6,$brand,$old_price,$current_price]);
+            echo "success!";
         }
     }
 
-    $prodRep = new ProductRepository();
-    $prodRep->insertProduct();
+    // $prodRep = new ProductRepository();
+    // $prodRep->insertProduct($product);
 ?>
