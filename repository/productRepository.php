@@ -1,11 +1,14 @@
-<?php include '../models/product.php'; include '../database/dbConnection.php';
+<?php 
+    include '../models/product.php';
+    include '../database/dbConnection.php';
 
+    class ProductRepository{
+        private $connection;
 
-
-
-
-
-
+        function __construct()
+        {
+            $conn = new DBConnection;
+            $this->connection = $conn->startConnection();
         }
     
         function insertProduct($product){
@@ -23,12 +26,23 @@
             $old_price = $product->getOldPrice();
             $current_price = $product->getCurrentPrice();
 
-            $sql = "INSERT INTO produktet(product_nr,name,image1,image2,image3,image4,image5,image6,brand,old_price,current_price) 
-                VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO products(name,image1,image2,image3,image4,image5,image6,brand,old_price,current_price) 
+                VALUES(?,?,?,?,?,?,?,?,?,?)";
             $statement = $conn->prepare($sql);
-            $statement->execute([$id,$name,$image1,$image2,$image3,$image4,$image5,$image6,$brand,$old_price,$current_price]);
-
+            $statement->execute([$name,$image1,$image2,$image3,$image4,$image5,$image6,$brand,$old_price,$current_price]);
         }
+
+        function getAllProducts(){
+            $conn = $this->connection;
+
+            $sql = "SELECT * FROM products";
+            $statement = $conn->query($sql);
+            $products = $statement->fetchAll();
+
+            return $products;
+        }
+
+
     }
 
 ?>

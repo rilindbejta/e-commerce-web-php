@@ -19,9 +19,7 @@
         <input type="text" name="brand" placeholder="brand"> <br><br>
         <input type="text" name="old_price" placeholder="old_price"> <br><br>
         <input type="text" name="current_price" placeholder="current_price"> <br><br>
-
-        <input type="submit" name="addproduct" value="add"> <br><br>
-
+        <input type="submit" name="add" value="Add Product"> <br><br>
     </form> 
     
     <?php

@@ -24,7 +24,7 @@
                     </div>
                     <ul class="user-menu">
                         <li><a href="#"><i class='bx bx-bell'></i></a></li>
-                        <li><a href="#"><i class='bx bx-user-circle'></i></a></li>
+                        <li><a href="login.php"><i class='bx bx-user-circle'></i></a></li>
                         <li><a href="#"><i class='bx bx-cart'></i></a></li>
                     </ul>
                 </div>

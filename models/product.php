@@ -12,9 +12,9 @@
         private $old_price;
         private $current_price;
 
-        function __construct($id,$name,$image1,$image2,$image3,$image4,$image5,$image6,$brand,$old_price,$current_price)
+        function __construct($name,$image1,$image2,$image3,$image4,$image5,$image6,$brand,$old_price,$current_price)
         {
-            $this->id = $id;
+            // $this->id = $id;
             $this->name = $name;
             $this->image1 = $image1;
             $this->image2 = $image2;
@@ -28,7 +28,7 @@
         }
 
         //getters
-        function getID(){
+        function getId(){
             return $this->id;
         }
         function getName(){
