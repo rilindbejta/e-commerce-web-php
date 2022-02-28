@@ -8,11 +8,11 @@
 	<div class="form-container sign-up-container">
 		<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 			<h1>Create Account</h1> <br>
-			<input type="text" name="name" placeholder="Full Name" />
-			<input type="text" name="username" placeholder="Username" />
-			<input type="date" name="birthday" placeholder="Birthday" />
-			<input type="email" name="email" placeholder="Email" />
-			<input type="password" name="password" placeholder="Password" />
+			<input type="text" name="name" placeholder="Full Name" required/>
+			<input type="text" name="username" placeholder="Username" required/>
+			<input type="date" name="birthday" placeholder="Birthday" required/>
+			<input type="email" name="email" placeholder="Email" required/>
+			<input type="password" name="password" placeholder="Password" required/>
 			<button type="submit" name="register">Sign Up</button>
 		</form>
 	</div>
