@@ -1,5 +1,6 @@
 let products = [
     {
+        id:'1',
         name: 'AOC C27G2Z 27',
         image1: './images/images-web/monitor1.png',
         image2: './images/images-web/monitor2.jpg',
@@ -63,7 +64,7 @@ renderProducts = (products) => {
                     </div>
                     <div class="product-card-info">
                         <div class="product-btn">
-                            <a href="./product-detail.php" class="btn-flat btn-hover btn-shop-now">shop now</a>
+                            <a href="./product-detail.php?" class="btn-flat btn-hover btn-shop-now">shop now</a>
                             <button class="btn-flat btn-hover btn-cart-add">
                                 <i class='bx bxs-cart-add'></i>
                             </button>

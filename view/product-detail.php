@@ -16,7 +16,18 @@
     <link rel="stylesheet" href="./css/web.css">
 </head>
 
+
+
 <body>
+
+<!-- duhet me perfundu ne qete menyre -->
+<?php 
+    // if(isset($_GET["id"])){
+    //     $myId=  $_GET["id"];
+    //     var_dump($myId);
+    //     //back merri te dhenat qe perkojne me produkt id
+    // }
+?>
 
     <?php
     include 'header.php';

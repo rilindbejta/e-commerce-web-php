@@ -1,6 +1,6 @@
     <!-- footer -->
-    <footer class="bg-second">
-        <div class="container">
+    <footer class="bg-footer">
+        <div class="footer-container">
             <div class="row">
                 <div class="col-3 col-md-6">
                     <h3 class="footer-head">Products</h3>
@@ -52,9 +52,9 @@
                                 </a></li>
                         </ul>
                     </div>
-                    <div class="donate">
-                        <input type="email" placeholder="ENTER YOUR EMAIL">
-                        <button>donate</button>
+                    <div class="subscribe">
+                        <input type="email" placeholder="EMAIL">
+                        <button>subscribe</button>
                     </div>
                 </div>
             </div>
