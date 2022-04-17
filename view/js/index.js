@@ -46,6 +46,13 @@ setInterval(() => {
 // render products
 let products = [
     {
+        name: 'Logitech G703 Lightspeed Wireless Gaming Mouse',
+        image1: './images/images-web/mouse1.png',
+        image2: './images/images-web/mouse2.jpg',
+        old_price: '1',
+        curr_price: '2'
+    },
+    {
         name: 'AOC C27G2Z 27',
         image1: './images/images-web/monitor1.png',
         image2: './images/images-web/monitor2.jpg',

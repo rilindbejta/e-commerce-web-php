@@ -20,15 +20,6 @@
 
 <body>
 
-<!-- duhet me perfundu ne qete menyre -->
-<?php 
-    // if(isset($_GET["id"])){
-    //     $myId=  $_GET["id"];
-    //     var_dump($myId);
-    //     //back merri te dhenat qe perkojne me produkt id
-    // }
-?>
-
     <?php
     include 'header.php';
     ?>
@@ -115,12 +106,12 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit laudantium obcaecati odit dolorem, doloremque accusamus esse neque ipsa dignissimos saepe quisquam tempore perferendis deserunt sapiente! Recusandae illum totam earum ratione.
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam incidunt maxime rerum reprehenderit voluptas asperiores ipsam quas consequuntur maiores, at odit obcaecati vero sunt! Reiciendis aperiam perferendis consequuntur odio quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quaerat eum veniam doloremque nihil repudiandae odio ratione culpa libero tempora. Expedita, quo molestias. Minus illo quis dignissimos aliquid sapiente error!
                         </p>
-                        <img src="./images/images-web/laptop5.jpg" alt="">
+                            <img src="./images/images-web/laptop5.jpg" alt="">
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis accusantium officia, quae fuga in exercitationem aliquam labore ex doloribus repellendus beatae facilis ipsam. Veritatis vero obcaecati iste atque aspernatur ducimus.
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat quam praesentium id sit amet magnam ad, dolorum, cumque iste optio itaque expedita eius similique, ab adipisci dicta. Quod, quibusdam quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, in corrupti ipsam sint error possimus commodi incidunt suscipit sit voluptatum quibusdam enim eligendi animi deserunt recusandae earum natus voluptas blanditiis?
                         </p>
-                        <img src="./images/images-web/laptop6.jpg" alt="">
+                            <img src="./images/images-web/laptop6.jpg" alt="">
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ullam quam fugit veniam ipsum recusandae incidunt, ex ratione, magnam labore ad tenetur officia! In, totam. Molestias sapiente deserunt animi porro?
                         </p>

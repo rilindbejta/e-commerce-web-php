@@ -1,5 +1,6 @@
 <?php
-    class DBConnection{
+    class dbConnection {
+        private $connection;
         private $server = "localhost";
         private $username = "root";
         private $password = "";
@@ -16,4 +17,3 @@
             }
         }
     }
-?>

@@ -1,28 +1,29 @@
 
-        <section class="sidebar-section">
+        <section class="sidebar-section col-3">
             <div class="sidebar">
                 <ul>
+                    <hr>
                     <li>
-                        <i class='bx bxs-dashboard'></i>
-                        Dashboard
+                        <a href="adminDashboard.php">
+                            <i class='bx bx-table'></i>
+                            Tables & Panels
+                        </a>
                     </li>
                     <hr>
                     <li>
-                        <i class='bx bx-table'></i>
-                        Tables & Panels
+                        <a id="formsDropdown">
+                            <i class='bx bx-menu'></i>
+                            Edit Menu
+                        </a>
+                        <ul id="dropdown">
+                            <li>
+                                <a href="addProduct.php">
+                                    <i class='bx bx-plus'></i>
+                                    Add Products
+                                </a>
+                            </li>
+                        </ul>
                     </li>
-                    <hr>
-                    <li>
-                        <i class='bx bxs-edit'></i>
-                        Forms
-                    </li>
-                    <hr>
-                    <li>
-                        <i class='bx bx-menu'></i>
-                        Dropdown Menu
-                    </li>
-                    <hr>
-                    <li>...</li>
                     <hr>
                 </ul>
             </div>

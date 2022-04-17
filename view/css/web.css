@@ -82,19 +82,8 @@ img {
     display: none;
 }
 
-.top-header {
-    height: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.top-header ul {
-    display: flex;
-}
-
-.top-header a {
-    font-size: 13px;
+#loginIcon{
+    font-size: x-large;
 }
 
 ul.devided > li {
@@ -590,6 +579,11 @@ ul.devided > li:last-child {
     font-size: 55px;
     font-weight: 600;
     margin-bottom: 30px;
+    text-align: center;
+}
+
+.sp-item-info{
+    text-align: center;
 }
 
 .sp-item-description {
@@ -1124,7 +1118,8 @@ footer ul li {
     }
 
     .sp-item-info {
-        padding-right: 35px;
+        padding-left: 25px;
+        padding-right: 25px;
     }
 
     .blog {

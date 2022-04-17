@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
    <!-- header -->
     <header>
         <!-- mobile menu -->
@@ -23,9 +27,20 @@
                         <i class='bx bx-search-alt'></i>
                     </div>
                     <ul class="user-menu">
-                        <li><a href="#"><i class='bx bx-bell'></i></a></li>
-                        <li><a href="login.php"><i class='bx bx-user-circle'></i></a></li>
-                        <li><a href="#"><i class='bx bx-cart'></i></a></li>
+                        <?php
+                            if(isset($_SESSION["userId"])){
+                                // echo "<li><a href='#'><i class='bx bx-bell'></i></a></li>";
+                                echo "<li><a href='../view/userProfile.php'><i class='bx bx-user-circle'></i></a></li>";
+                                echo "<li><a href='#'><i class='bx bx-cart'></i></a></li>";
+                                if(isset($_SESSION["role"]) == 1){
+                                    echo "<li><a href='../view/adminDashboard.php'><i class='bx bxs-dashboard'></i></a></li>";
+                                }
+                                echo "<li><a href='../assets/logout.inc.php'><i class='bx bx-log-in'></i></a></li>";
+                            }
+                            else{
+                                echo "<li><a id='loginIcon' href='../view/login.php'>Login<i class='bx bx-lock'></i></a></li>";
+                            }
+                        ?>
                     </ul>
                 </div>
             </div>

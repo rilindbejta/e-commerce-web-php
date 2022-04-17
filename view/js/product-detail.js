@@ -149,34 +149,6 @@ renderProducts = (products) => {
                 </div>
             </div>
         `
-        // let prod = `
-        //     <div class="col-4 col-md-6 col-sm-12">
-        //         <div class="product-card">
-        //             <div class="product-card-img">
-        //                 <img src="${product.image1}" alt="">
-        //                 <img src="${product.image2}" alt="">
-        //             </div>
-        //            <div class="product-card-info">
-        //                 <div class="product-btn">
-        //                     <a href="./product-detail.php?" class="btn-flat btn-hover btn-shop-now">shop now</a>
-        //                     <button class="btn-flat btn-hover btn-cart-add">
-        //                         <i class='bx bxs-cart-add'></i>
-        //                     </button>
-        //                     <button class="btn-flat btn-hover btn-cart-add">
-        //                         <i class='bx bxs-heart'></i>
-        //                     </button>
-        //                 </div>
-        //                 <div class="product-card-name">
-        //                     ${product.name}
-        //                 </div>
-        //                 <div class="product-card-price">
-        //                     <span><del>${product.old_price}</del></span>
-        //                     <span class="curr-price">${product.curr_price}</span>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </div>
-        // `
         product_list.insertAdjacentHTML("beforeend", prod)
     })
 }

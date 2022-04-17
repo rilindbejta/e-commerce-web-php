@@ -1,6 +1,5 @@
 <?php
     class Product{
-        private $id;
         private $name;
         private $image1;
         private $image2;
@@ -14,7 +13,6 @@
 
         function __construct($name,$image1,$image2,$image3,$image4,$image5,$image6,$brand,$old_price,$current_price)
         {
-            // $this->id = $id;
             $this->name = $name;
             $this->image1 = $image1;
             $this->image2 = $image2;
@@ -27,10 +25,7 @@
             $this->current_price = $current_price;
         }
 
-        //getters
-        function getId(){
-            return $this->id;
-        }
+        //getters   
         function getName(){
             return $this->name;
         }
@@ -63,4 +58,3 @@
         }
 
     }
-?>

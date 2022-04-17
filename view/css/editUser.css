@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.content{
+    padding: 0;
+}
+
+#header-container{
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-color: var(--lightblue);
+}
+
+.sidebar{
+    min-height: 600px;
+}
+
+#btn-container-form{
+    display: flex;
+    justify-content: center;
+}
+
+#btn-div{
+    margin-top: 15px;
+}
+
+#btn-submit{
+    background-color: var(--lightblue);
+}

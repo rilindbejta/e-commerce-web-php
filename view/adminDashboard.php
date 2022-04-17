@@ -2,67 +2,21 @@
 <html lang="en">
 <head>
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/grid.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul id="nav-first-ul">
-                <li>
-                    <h1>Admin</h1>
-                </li>
-                <ul id="nav-inner-ul">
-                    <li>
-                        <a href="#"><i class='bx bxs-bell-ring'></i></a>
-                        <a href="#"><i class='bx bx-chevron-down'></i></i></a>
-                    </li>
-                    <li>
-                        <!-- Logout -->
-                        <a href="#">Logout</a>
-                        <a href="#"><i class='bx bx-log-in'></i></a></a>
-                    </li>
-                </ul>
-            </ul>
-        </nav>
-    </header>
 
+    <?php
+        include 'navbar.php';
+    ?>
 
     <div class="container">
 
     <?php
         include 'sidebar.php';
     ?>
-
-        <!-- <section class="sidebar-section">
-            <div class="sidebar">
-                <ul>
-                    <li>
-                        <i class='bx bxs-dashboard'></i>
-                        Dashboard
-                    </li>
-                    <hr>
-                    <li>
-                        <i class='bx bx-table'></i>
-                        Tables & Panels
-                    </li>
-                    <hr>
-                    <li>
-                        <i class='bx bxs-edit'></i>
-                        Forms
-                    </li>
-                    <hr>
-                    <li>
-                        <i class='bx bx-menu'></i>
-                        Dropdown Menu
-                    </li>
-                    <hr>
-                    <li>...</li>
-                    <hr>
-                </ul>
-            </div>
-        </section> -->
-
         <div class="content">
             <div class="content-header">
                 <div class="div-h1">
@@ -88,72 +42,46 @@
                     </ul>
                     <div class="table-container">
                         <table>
-                            <tr>
-                                <th colspan="7" style="height: 30px;">User Table</th>
-                            </tr>
-                            <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Username</th>
-                                <th>Birthday</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Admin</th>
-                            </tr>
-                            <tr>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td><i>null</i></td>
-                            </tr>
-                            <tr>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td><i>null</i></td>
-                            </tr>
-                            <tr>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td><i>null</i></td>
-                            </tr>
-                            <tr>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td><i>null</i></td>
-                            </tr>
-                            <tr>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td><i>null</i></td>
-                            </tr>
-                            <tr>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td><i>null</i></td>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th colspan="6" style="height: 30px;">Users Table</th>
+                                </tr>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Admin</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                                include_once '../repository/userRepository.php';
+                                $userRepository  = new UserRepository();
+                                $users = $userRepository->getAllUsers();
+                                foreach($users as $user){
+                                echo 
+                                "
+                                <tr>
+                                    <td>$user[id]</td>
+                                    <td>$user[name]</td>
+                                    <td>$user[username]</td>
+                                    <td>$user[email]</td>
+                                    <td>$user[admin]</td>
+                                    <td class='last-col'>
+                                        <a href='editUser.php?id=$user[id]'>
+                                            <i class='bx bx-edit btn-edit'></i>
+                                        </a>
+                                        <a href='deleteUser.php?id=$user[id]'>
+                                            <i class='bx bx-trash btn-delete'></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                ";
+                            }
+                            ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -169,16 +97,13 @@
                                 <button>2</button>
                                 <button>3</button>
                                 <button>Next</button>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             <section class="top-section">
-                <!-- <div class="top-section-header">
-                    <h1>Advanced Tables</h1>
-                    <hr>
-                </div> -->
                 <hr>
                 <div class="top-section-content">
                     <ul>
@@ -193,72 +118,47 @@
                     </ul>
                     <div class="table-container">
                         <table>
-                            <tr>
-                                <th colspan="7" style="height: 30px;">Products Table</th>
-                            </tr>
-                            <tr>
-                                <th>Id</th>
-                                <th>Name</th>
-                                <th>Username</th>
-                                <th>Birthday</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Admin</th>
-                            </tr>
-                            <tr>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td><i>null</i></td>
-                            </tr>
-                            <tr>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td><i>null</i></td>
-                            </tr>
-                            <tr>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td><i>null</i></td>
-                            </tr>
-                            <tr>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td><i>null</i></td>
-                            </tr>
-                            <tr>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td><i>null</i></td>
-                            </tr>
-                            <tr>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td>aaaaaa</td>
-                                <td><i>null</i></td>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th colspan="9" style="height: 30px;">Products Table</th>
+                                </tr>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Brand</th>
+                                    <th>Price</th>
+                                    <th>Current Price</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                                include_once '../repository/productRepository.php';
+                                $productRepository  = new ProductRepository();
+                                $products = $productRepository->getAllProducts();
+
+                                foreach($products as $product){
+                                echo 
+                                "
+                                <tr>
+                                    <td>$product[id]</td>
+                                    <td>$product[name]</td>
+                                    <td>$product[brand]</td>
+                                    <td>$product[old_price]</td>
+                                    <td>$product[current_price]</td>
+                                    <td class='last-col'>
+                                        <a href='editProduct.php?id=$product[id]'>
+                                            <i class='bx bx-edit btn-edit'></i>
+                                        </a>
+                                        <a href='deleteProduct.php?id=$product[id]'>
+                                            <i class='bx bx-trash btn-delete'></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                ";
+                            }
+                            ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -274,6 +174,7 @@
                                 <button>2</button>
                                 <button>3</button>
                                 <button>Next</button>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -285,5 +186,7 @@
 
 
     </div>
+
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
