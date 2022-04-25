@@ -5,14 +5,14 @@ $productRepository  = new ProductRepository();
 $productId = $_GET['id'];
 $product = $productRepository->getProductsById($productId);
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <body>
 
     <?php
-        include 'header.php';
+    include 'header.php';
     ?>
 
     <!-- product-detail content -->
@@ -24,7 +24,7 @@ $product = $productRepository->getProductsById($productId);
                     <span><i class='bx bxs-chevrons-right'></i></span>
                     <a href="./products.php">all products</a>
                     <span><i class='bx bxs-chevrons-right'></i></span>
-                    <a href="./product-detail.php"><?php echo $product['name']?></a>
+                    <a href="./product-detail.php"><?php echo $product['name'] ?></a>
                 </div>
             </div>
             <div class="row product-row">
@@ -35,13 +35,13 @@ $product = $productRepository->getProductsById($productId);
                     <div class="box">
                         <div class="product-img-list">
                             <div class="product-img-item">
-                                <img src="<?php echo $product['image2']?>" alt="">
+                                <img src="<?php echo $product['image2'] ?>" alt="">
                             </div>
                             <div class="product-img-item">
-                                <img src="<?php echo $product['image2']?>" alt="">
+                                <img src="<?php echo $product['image2'] ?>" alt="">
                             </div>
                             <div class="product-img-item">
-                                <img src="<?php echo $product['image2']?>" alt="">
+                                <img src="<?php echo $product['image2'] ?>" alt="">
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ $product = $productRepository->getProductsById($productId);
                 <div class="col-7 col-md-12">
                     <div class="product-info">
                         <h1>
-                            <?php echo $product['name']?>
+                            <?php echo $product['name'] ?>
                         </h1>
                         <div class="product-info-detail">
                             <span class="product-info-detail-title">Brand:</span>
@@ -97,12 +97,12 @@ $product = $productRepository->getProductsById($productId);
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit laudantium obcaecati odit dolorem, doloremque accusamus esse neque ipsa dignissimos saepe quisquam tempore perferendis deserunt sapiente! Recusandae illum totam earum ratione.
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam incidunt maxime rerum reprehenderit voluptas asperiores ipsam quas consequuntur maiores, at odit obcaecati vero sunt! Reiciendis aperiam perferendis consequuntur odio quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quaerat eum veniam doloremque nihil repudiandae odio ratione culpa libero tempora. Expedita, quo molestias. Minus illo quis dignissimos aliquid sapiente error!
                         </p>
-                            <img src="<?php echo $product['image2'] ?>" alt="">
+                        <img src="<?php echo $product['image2'] ?>" alt="">
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis accusantium officia, quae fuga in exercitationem aliquam labore ex doloribus repellendus beatae facilis ipsam. Veritatis vero obcaecati iste atque aspernatur ducimus.
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat quam praesentium id sit amet magnam ad, dolorum, cumque iste optio itaque expedita eius similique, ab adipisci dicta. Quod, quibusdam quas. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, in corrupti ipsam sint error possimus commodi incidunt suscipit sit voluptatum quibusdam enim eligendi animi deserunt recusandae earum natus voluptas blanditiis?
                         </p>
-                            <img src="<?php echo $product['image2'] ?>" alt="">
+                        <img src="<?php echo $product['image2'] ?>" alt="">
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ullam quam fugit veniam ipsum recusandae incidunt, ex ratione, magnam labore ad tenetur officia! In, totam. Molestias sapiente deserunt animi porro?
                         </p>
@@ -193,7 +193,7 @@ $product = $productRepository->getProductsById($productId);
 
     <!-- app js -->
     <script src="./js/web.js"></script>
-    <!-- <script src="./js/product-detail.js"></script> -->
+    <script src="./js/product-detail.js"></script>
 
 </body>
 

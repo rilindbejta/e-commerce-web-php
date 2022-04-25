@@ -13,6 +13,14 @@
 <body>
     <?php
     include_once '../view/header.php';
+
+    if (isset($_POST['removeProduct'])) {
+        foreach ($_SESSION['cart'] as $key => $value) {
+            if ($value['product_id'] == $_GET['id']) {
+                unset($_SESSION['cart'][$key]);
+            }
+        }
+    }
     ?>
 
     <section>
@@ -22,19 +30,20 @@
                     <h3>My Cart</h3>
                     <hr />
                 </div>
-                <?php
-                include_once '../repository/productRepository.php';
+                <div class="col-12 row">
+                    <?php
+                    include_once '../repository/productRepository.php';
 
-                $repository = new ProductRepository();
-                $products = $repository->getAllProducts();
+                    $repository = new ProductRepository();
+                    $products = $repository->getAllProducts();
 
-                if (isset($_SESSION['cart'])) {
-                    foreach ($products as $product) {
-                        foreach (array_column($_SESSION['cart'], 'product_id') as $value) {
-                            if ($product['id'] == $value) {
-                                echo "
+                    if (isset($_SESSION['cart'])) {
+                        foreach ($products as $product) {
+                            foreach (array_column($_SESSION['cart'], 'product_id') as $value) {
+                                if ($product['id'] == $value) {
+                                    echo "
                                 <div class='col-4 col-md-6 col-sm-12'>
-                                    <form>
+                                    <form action=\"../view/cart.php?id=$product[id]\" method='POST'>
                                         <div class='product-card'>
                                             <div class='product-card-img'>
                                                 <img src='$product[image1]' alt=''>
@@ -42,16 +51,16 @@
                                             </div>
                                             <div class='product-card-info'>
                                                 <div class='product-btn'>
-                                                    <button type='button' class='btn-flat btn-hover btn-cart-add'>
+                                                    <button type='button' name='add' class='btn-flat btn-hover btn-cart-add'>
                                                         <i class='bx bx-plus'></i>    
                                                     </button>
                                                     <button class='btn-flat btn-hover btn-cart-add'>
                                                         1
                                                     </button>
-                                                    <button type='button' class='btn-flat btn-hover btn-cart-add'>
+                                                    <button name='remove' class='btn-flat btn-hover btn-cart-add'>
                                                         <i class='bx bx-minus'></i>    
                                                     </button>
-                                                    <button class='btn-flat btn-hover btn-cart-add'>
+                                                    <button type='submit' name='removeProduct' class='btn-flat btn-hover btn-cart-add'>
                                                         REMOVE
                                                     </button>
                                                 </div>
@@ -67,12 +76,13 @@
                                     </form>
                                 </div>
                                 ";
+                                }
                             }
                         }
                     }
-                }
 
-                ?>
+                    ?>
+                </div>
             </div>
             <div id="price-details" class="col-3">
                 <div class="col-12" id="cart-header">
