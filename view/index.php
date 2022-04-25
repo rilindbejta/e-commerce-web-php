@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-com</title>
-    <!-- FONT -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
-    <!-- ICONS -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <!-- css -->
-    <link rel="stylesheet" href="./css/grid.css">
-    <link rel="stylesheet" href="./css/web.css">
-</head>
-
 <body>
 
     <?php
     include 'header.php';
+    
+    if (isset($_POST['addCart']) && isset($_SESSION['userId'])) {
+        if (!isset($_SESSION['cart'])) {
+            $item_array = array('product_id' => $_POST['product_id'],);
+
+            $_SESSION['cart'][0] = $item_array;
+        } else {
+            $item_array_id = array_column($_SESSION['cart'], "product_id");
+
+            if (in_array($_POST['product_id'], $item_array_id)) {
+                echo "<script>alert('Product is already added in the cart')</script>";
+                echo "<script>window.location = 'index.php'</script>";
+            } else {
+                $count = count($_SESSION['cart']);
+                $item_array = array(
+                    'product_id' => $_POST['product_id']
+                );
+                $_SESSION['cart'][$count] = $item_array;
+            }
+        }
+    }
+
     ?>
 
     <!-- hero section -->
@@ -59,7 +66,7 @@
                                 Alienware 27 Gaming Monitor - AW2721D
                             </h3>
                             <h2 class="top-down trans-delay-0-2">
-                                Next-gen design 
+                                Next-gen design
                             </h2>
                             <p class="top-down trans-delay-0-4">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. A optio, voluptatum aperiam nobis quis maxime corporis porro alias soluta sunt quae consectetur aliquid blanditiis perspiciatis labore cumque, ullam, quam eligendi!
@@ -155,7 +162,46 @@
                 <h2>Latest products</h2>
             </div>
             <div class="row" id="latest-products">
-            
+                <?php
+                include_once '../repository/productRepository.php';
+                $productRepository  = new ProductRepository();
+                $products = $productRepository->getAllProducts();
+
+                foreach ($products as $product) {
+                    echo "
+                    <div class='col-3 col-md-6 col-sm-12'>
+                        <form action='' method='post'>
+                            <div class='product-card'>
+                                <div class='product-card-img'>
+                                    <img src='$product[image1]' alt=''>
+                                    <img src='$product[image2]' alt=''>
+                                </div>
+                                <div class='product-card-info'>
+                                    <div class='product-btn'>
+                                    <form>
+                                        <a href='./product-detail.php?id=$product[id]' class='btn-flat btn-hover btn-shop-now'>shop now</a>
+                                        <button type='submit' name='addCart' class='btn-flat btn-hover btn-cart-add'>
+                                            <i class='bx bxs-cart-add'></i>
+                                        </button>
+                                        <button class='btn-flat btn-hover btn-cart-add'>
+                                            <i class='bx bxs-heart'></i>
+                                        </button>
+                                    </div>
+                                    <div class='product-card-name'>
+                                        $product[name]
+                                    </div>
+                                    <div class='product-card-price'>
+                                        <span><del>$$product[old_price]</del></span>
+                                        <span class='curr-price'>$$product[current_price]</span>
+                                    </div>
+                                    <input type='hidden' name='product_id' value='$product[id]'>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    ";
+                }
+                ?>
             </div>
             <div class="section-footer">
                 <a href="./products.php" class="btn-flat btn-hover">view all</a>
@@ -194,6 +240,46 @@
                 <h2>best selling</h2>
             </div>
             <div class="row" id="best-products">
+                <?php
+                include_once '../repository/productRepository.php';
+                $productRepository  = new ProductRepository();
+                $products = $productRepository->getAllProducts();
+
+                foreach ($products as $product) {
+                    echo "
+                    <div class='col-3 col-md-6 col-sm-12'>
+                        <form action='' method='post'>
+                            <div class='product-card'>
+                                <div class='product-card-img'>
+                                    <img src='$product[image1]' alt=''>
+                                    <img src='$product[image2]' alt=''>
+                                </div>
+                                <div class='product-card-info'>
+                                    <div class='product-btn'>
+                                    <form>
+                                        <a href='./product-detail.php?id=$product[id]' class='btn-flat btn-hover btn-shop-now'>shop now</a>
+                                        <button type='submit' name='addCart' class='btn-flat btn-hover btn-cart-add'>
+                                            <i class='bx bxs-cart-add'></i>
+                                        </button>
+                                        <button class='btn-flat btn-hover btn-cart-add'>
+                                            <i class='bx bxs-heart'></i>
+                                        </button>
+                                    </div>
+                                    <div class='product-card-name'>
+                                        $product[name]
+                                    </div>
+                                    <div class='product-card-price'>
+                                        <span><del>$$product[old_price]</del></span>
+                                        <span class='curr-price'>$$product[current_price]</span>
+                                    </div>
+                                    <input type='hidden' name='product_id' value='$product[id]'>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    ";
+                }
+                ?>
             </div>
             <div class="section-footer">
                 <a href="./products.php" class="btn-flat btn-hover">view all</a>

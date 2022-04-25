@@ -7,7 +7,6 @@ $product = $productRepository->getProductsById($productId);
 
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,11 +71,11 @@ $product = $productRepository->getProductsById($productId);
                         </div>
                         <div class="form-control">
                             <span>Enter product price*</span>
-                            <input type="number" name="pPrice" id="productPrice" value="<?=$product['old_price']?>">
+                            <input type="decimal" name="pPrice" id="productPrice" value="<?=$product['old_price']?>">
                         </div>
                         <div class="form-control">
                             <span>Enter current product price*</span>
-                            <input type="number" name="pCurrentPrice" id="productPrice" value="<?=$product['current_price']?>">
+                            <input type="decimal" name="pCurrentPrice" id="productPrice" value="<?=$product['current_price']?>">
                         </div>
                         <div class="form-control" id="btn-div">
                             <input style="background-color: blue;" type="submit" name="editProduct" id="btn-submit" value="Update Product">

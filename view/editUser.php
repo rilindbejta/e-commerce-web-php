@@ -21,27 +21,7 @@ $user = $userRepository->getUserById($userId);
     <link rel="stylesheet" href="css/editUser.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul id="nav-first-ul">
-                <li>
-                    <a href="adminDashboard.php">
-                        <h1>Dashboard</h1>
-                    </a>
-                </li>
-                <ul id="nav-inner-ul">
-                    <li>
-                        <a href="index.php"><i class='bx bxs-home'></i></a>
-                    </li>
-                    <li>
-                        <!-- Logout -->
-                        <a href="#">Logout</a>
-                        <a href="#"><i class='bx bx-log-in'></i></a></a>
-                    </li>
-                </ul>
-            </ul>
-        </nav>
-    </header>
+    <?php include 'navbar.php'; ?>
     <div class="container">
     <?php include 'sidebar.php'; ?>
     <div class="content">
@@ -103,6 +83,6 @@ if(isset($_POST['update'])){
     $admin = $_POST['admin'];
 
     $userRepository->updateUser($id, $name, $username, $birthday, $email, $password, $admin);
-    header('Location: adminDashboard.php');
+    header('Location: ../view/adminDashboard.php');
 }
 ?>

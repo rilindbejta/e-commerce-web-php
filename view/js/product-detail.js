@@ -61,7 +61,7 @@ let products = [
 ]
 
 
-let product_list = document.querySelector('#related-products')
+// let product_list = document.querySelector('#related-products')
 
 renderProducts = (products) => {
     products.forEach(product => {

@@ -75,8 +75,6 @@ class UserRepository{
         $statement->execute([$name,$username,$birthday,$email,$password, $id]);
 
         echo "<script> alert('User has been updated successfuly!') </script>";
-
-
     }
 
     function deleteUserById($id){

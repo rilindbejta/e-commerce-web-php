@@ -75,5 +75,14 @@ class ProductRepository {
 
         header("Location: ../view/adminDashboard.php");
     }
+
+    public function getProductsByLimit($number){
+        $this->query = "select * from products limit $number";
+        $statement = $this->connection->prepare($this->query);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
 }
 
