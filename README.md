@@ -1,11 +1,11 @@
-E-Commerce Web PHP Project
+<h1><b>E-Commerce Web PHP Project</b></h1>
 This repository contains a simple e-commerce website project developed using PHP. This project was undertaken as part of academic coursework at the university. It is a demonstration of basic e-commerce functionalities implemented with PHP.
 
-Features
-Product Management: Users can browse through available products, view product details, and add products to their cart.
-User Authentication: Basic user authentication system is implemented to register new users and allow existing users to log in.
-Shopping Cart: Users can add products to their shopping cart, view their cart, and remove items from the cart.
-Checkout Process: Basic checkout process is implemented for users to review their cart items and proceed with payment.
+<h2>Features</h2>
+<b>Product Management:</b> Users can browse through available products, view product details, and add products to their cart.
+<b>User Authentication:</b> Basic user authentication system is implemented to register new users and allow existing users to log in.
+<b>Shopping Cart:</b> Users can add products to their shopping cart, view their cart, and remove items from the cart.
+<b>Checkout Process:</b> Basic checkout process is implemented for users to review their cart items and proceed with payment.
 
 Technologies Used
 PHP: The core server-side scripting language used for developing the backend logic of the e-commerce website.
